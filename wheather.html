@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="wheather.css" >
+    </head>
+
+    <body>
+        
+
+        
+
+        <div id="container">
+            
+            <form >
+                <label style="color: white;" for="fname">Whether API</label>
+                <input type="text" id="fname" name="firstname" placeholder="Enter Your Location">
+                <br>
+                
+              
+                <input class="input_btn" id="submit_btn" type="submit" value="Submit">
+                <input class="input_btn" type="reset" value="Reset">
+              </form>
+
+              
+        </div>
+
+        <div id="container2">
+
+            <div class="image-container">
+                <img  id="img-result">
+            </div>
+
+            <section class="more_info">
+
+                <h2 id="temp"></h2>
+                <h2 id="condition"></h2>
+                <h3 id="country"></h3>
+
+
+            </section>
+
+            <div class="info-box">
+                <section class="info-box-label">
+                    <h3 style="margin-top: 5px">Pressure</h3>
+                    <h3 style="margin-top: 5px">Humidity</h3>
+                    <h3 style="margin-top: 5px">Precipitation</h3>
+                </section>
+
+                <section class="info-box-result">
+                    <h3 id="pressure_result" style="margin-top: 5px"></h3>
+                    <h3 id="humid_result" style="margin-top: 5px"></h3>
+                    <h3  id="preci_result" style="margin-top: 5px"></h3>
+                </section>
+            </div>
+
+        </div>
+
+        
+
+        <script>
+            $(document).ready(function(){
+                $("#submit_btn").click(function(e){
+                    e.preventDefault();
+                    const input_value= $("#fname").val()
+                    
+                    const xhttp = new XMLHttpRequest();
+                    if(input_value != ""){
+                    
+
+                        xhttp.open("GET", "Enter You Api"+input_value+"&aqi=yes");
+                        xhttp.send();
+                        xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            const objects = JSON.parse(this.responseText);
+                            $("#pressure_result").text(objects["current"]["pressure_in"])
+                            $("#humid_result").text(objects["current"]["humidity"])
+                            $("#preci_result").text(objects["current"]["precip_mm"])
+                            const dump = "\xB0";
+
+                            console.log(objects["current"]["condition"]["icon"])
+
+                            $("#img-result").attr("src","http:"+objects["current"]["condition"]["icon"]);
+                            $("#img-result").css("width","200px")
+
+                            $("#temp").text(objects["current"]["temp_c"]+ dump)
+                            $("#condition").text(objects["location"]["name"])
+                            $("#country").text(objects["location"]["country"])
+                            //console.log(objects["current"]["pressure_in"]);
+                    }}
+                        
+                    }else{
+                        alert("Please Enter City")
+                    }
+                    
+
+                    
+                })
+            })
+        </script>
+    </body>
+</html>

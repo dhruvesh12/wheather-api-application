@@ -1,0 +1,159 @@
+
+
+body{
+    
+    position: fixed;
+    
+    background-image: url("https://wallpaperaccess.com/full/5943344.jpg");
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .input_btn {
+    width: 45%;
+    
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+
+.demo{
+    position: absolute;
+    background: orange;
+    
+    right: 50%;
+    
+}
+
+#container{
+    position: fixed;
+    width: 40%;
+    height: 40%;
+    margin: auto;
+    border-color: red;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+    border: 3px solid blue;
+    border-radius: 20px;
+    margin-top: 10%;
+    margin-left: 5%;
+    
+    background-color: black;
+    background: rgba(5, 5, 5, 0.5);
+    
+}
+
+
+#container2{
+    position: fixed;
+    width: 40%;
+    height: 50%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+    box-sizing: border-box;
+    margin-top: 10%;
+    margin-left: 50%;
+    border: 1px solid white;
+    border-spacing: 50%;
+    
+    background-color: black;
+    background: rgba(5, 5, 5, 0.5);
+    
+    
+}
+
+
+.image-container{
+    position: absolute;
+    bottom: 50%;
+    left: 10%;
+    width: 100px;
+    height: 100px;
+    background-color:rgba(5, 5, 5, 0.0) ;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.info-box{
+    position: absolute;
+    bottom: 50px;
+    box-sizing: border-box;
+    width: 95%;
+    height: 50px; 
+    background-color:#0099FF;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    
+    
+    
+}
+
+.info-box-label{
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    flex-direction: row;
+    margin-top: 5px;
+    justify-content: space-between;
+    color: whitesmoke;
+    
+}
+
+.info-box-result{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    gap: 37%;
+    color: whitesmoke;
+}
+
+.more_info{
+    
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+    margin-top: 10%;
+    color: whitesmoke;
+    font-size: larger;
+    
+    
+    
+
+}
+
+
